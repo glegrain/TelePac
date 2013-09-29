@@ -5,7 +5,7 @@
 # basic map structure without any wall or attributes
 #
 # You will then have to manually add the walls (with "null" 
-# set to desired exits) and add other metadata for the level.
+# set to desired exits) and add other meta-data for the level.
 #
 # You can use http://jsonlint.com/ to validate the file.
 
@@ -20,8 +20,8 @@ height = 7
 for i in range(0, width):
 	for j in range(0,height):
 
-		# uncomment fo simple "rxx" matrice representation
-		#sys.stdout.write('r%d%d ' % (i,j))
+		# uncomment for simple "rxx" matrix representation
+		# sys.stdout.write('r%d%d ' % (i,j))
 		if i == 0:
 			nExit = " null"
 		else:
@@ -45,7 +45,7 @@ for i in range(0, width):
 		rName = "\"r"+str(i)+str(j)+"\""
 
 		sys.stdout.write('{"Name": %s, "NorthExit": %s, "SouthExit": %s, "WestExit": %s, "EastExit": %s, "Attributes":    null }' % (rName,nExit,sExit,wExit,eExit))
-		# seperate objects with a comma
+		# separate objects with a comma
 		if i < height - 1 or j < width - 1 :
 			sys.stdout.write(", ")
 	sys.stdout.write("\n")
