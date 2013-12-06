@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head lang="en-US">
+	<meta charset="utf-8">
+	<title>TelePac (A3P 2013 3J)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- CSS Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	TODO 
+	<![endif]-->
+	<style typr="text/css">
+	body {
+		color: #5a5a5a;
+	}
+
+	h2 {
+		font-weight: normal;
+	}
+
+	.featurette-heading {
+		margin-bottom: 20px;
+		font-size: 50px;
+		line-height: 1;
+		letter-spacing: -1px;
+	}
+
+	.featurette-divider {
+		margin: 80px 0;
+	}
+
+	</style>
+</head>
+
+<body>
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-inverse" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">TelePac</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Download</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="index.html#adventurous">Adventure</a></li>
+						<li><a href="index.html#legendary">Mystery</a></li>
+						<li><a href="index.html#Addictive">Captivating</a></li>
+						<li><a href="index.html#legendary">A trip in the past</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Source</a></li>
+				<li class="active"><a href="about.html">About</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="my-zuul-bad/doc/index.html">Support (Beta javadoc)</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+	<!-- END of NAVBAR -->
+
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="span3"></div>
+				<h2>Who we are: <span class="text-muted">Guillaume Legrain & Florian Martin</span></h2>
+				<p class="text-info">Two future <a href="http://esiee.fr">ESIEE Paris</a> engineers graduating 2016.</p>
+				<h2>Our goal:<span class="text-muted"> Learn Java</span></h2>
+				<p class="text-success">The idea behind the project is to learn Java while creating an addictive game.</p>
+
+			<div class="span9"></div>
+		</div>
+
+
+
+		<footer>
+			<p class="pull-right"><a href="#">Back to top</a></p>
+			<p>© 2013 ESIEE · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+		</footer> <!-- End of footer -->
+	</div><!-- End of container -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<!-- Js Bootstrap -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+	<script>
+	//Smooth scrolling for anchor links
+	$(document).ready(function() {
+		function filterPath(string) {
+			return string
+			.replace(/^\//,'')
+			.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+			.replace(/\/$/,'');
+		}
+		var locationPath = filterPath(location.pathname);
+		var scrollElem = scrollableElement('html', 'body');
+
+		$('a[href*=#]').each(function() {
+			var thisPath = filterPath(this.pathname) || locationPath;
+			if (  locationPath == thisPath
+				&& (location.hostname == this.hostname || !this.hostname)
+				&& this.hash.replace(/#/,'') ) {
+				var $target = $(this.hash), target = this.hash;
+			if (target) {
+				var targetOffset = $target.offset().top;
+				$(this).click(function(event) {
+					event.preventDefault();
+					$(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+						location.hash = target;
+					});
+				});
+			}
+		}
+	});
+
+  // use the first element that is "scrollable"
+  function scrollableElement(els) {
+  	for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+  		var el = arguments[i],
+  		$scrollElement = $(el);
+  		if ($scrollElement.scrollTop()> 0) {
+  			return el;
+  		} else {
+  			$scrollElement.scrollTop(1);
+  			var isScrollable = $scrollElement.scrollTop()> 0;
+  			$scrollElement.scrollTop(0);
+  			if (isScrollable) {
+  				return el;
+  			}
+  		}
+  	}
+  	return [];
+  }
+
+});
+</script>
+</body>
+</html>
