@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ItemList()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ ItemList\n
+comment1.params=pItemName
+comment1.target=Item\ getItemNamed(java.lang.String)
+comment2.params=pItem
+comment2.target=void\ setItem(Item)
+comment3.params=pItemName\ pItem
+comment3.target=void\ setItem(java.lang.String,\ Item)
+comment4.params=pItem
+comment4.target=boolean\ hasItem(Item)
+comment5.params=pItemName
+comment5.target=boolean\ hasItemNamed(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getItemsString()
+comment7.params=pItem
+comment7.target=void\ removeItem(Item)
+comment8.params=
+comment8.target=int\ getNumberOfItems()
+comment8.text=\n\ same\ as\ size()\n\ @return\n
+comment9.params=
+comment9.target=double\ getTotalWeight()
+numComments=10
