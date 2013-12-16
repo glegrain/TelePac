@@ -4,3 +4,6 @@ implement a action in Game.processCommand
 
 Exercise 7.41
 If we change the word associated with the help command in CommandWord, this change automatically reflected in the welcome text when you start the game.
+
+Exercise 7.42
+TODO: implement mvc
