@@ -210,174 +210,175 @@ public class GameEngine extends Observable implements Observer
 
         //String vCommandWord = vCommand.getCommandWord();
         switch ( vCommandWord ) {
-            case CommandWord.HELP :     
+            case HELP :     
             this.printHelp();
             break;
-            case CommandWord.GO :       
-                this.goRoom(vCommand);
-                break;
-            case CommandWord.LOOK :     
-                this.look();
-                break;
-            case CommandWord.ITEMS :    
-                this.items();
-                break;
-            case CommandWord.EAT :      
-                this.eat(vCommand);
-                break;
-            case CommandWord.TEST :     
-                this.test(vCommand);
-                break;
-            case CommandWord.TAKE :     
-                this.take(vCommand);
-                break;
-            case CommandWord.DROP :     
-                this.drop(vCommand);
-                break;
-            case CommandWord.BACK :     
-                this.goBack();
-                break;
-            case CommandWord.Quit  :    
-                //wantToQuit = quit(pCommandLine);
-                this.endGame();
-                break;
+            case GO :       
+            this.goRoom(vCommand);
+            break;
+            case LOOK :     
+            this.look();
+            break;
+            case ITEMS :    
+            this.items();
+            break;
+            case EAT :      
+            this.eat(vCommand);
+            break;
+            case TEST :     
+            this.test(vCommand);
+            break;
+            case TAKE :     
+            this.take(vCommand);
+            break;
+            case DROP :     
+            this.drop(vCommand);
+            break;
+            case BACK :     
+            this.goBack();
+            break;
+            case QUIT  :    
+            //wantToQuit = quit(pCommandLine);
+            this.endGame();
+            break;
             default:
-                // else command not recognised.
-                // return wantToQuit;
-                break;
-
-            // if        (vCommandWord == CommandWord.HELP)  {
-            //     this.printHelp();
-            // } else if (vCommandWord == CommandWord.GO)    {
-            //     this.goRoom(vCommand);
-            // } else if (vCommandWord == CommandWord.LOOK)  {
-            //     this.look();
-            // } else if (vCommandWord == CommandWord.ITEMS) {
-            //     this.items();
-            // } else if (vCommandWord == CommandWord.EAT)   {
-            //     this.eat(vCommand);
-            // } else if (vCommandWord == CommandWord.TEST)  {
-            //     this.test(vCommand);
-            // } else if (vCommandWord == CommandWord.TAKE)  {
-            //     this.take(vCommand);
-            // } else if (vCommandWord == CommandWord.DROP)  {
-            //     this.drop(vCommand);
-            // } else if (vCommandWord == CommandWord.BACK)  {
-            //     this.goBack();
-            // } else if (vCommandWord == CommandWord.QUIT)  {
-            //     // wantToQuit = quit(pCommandLine);
-            //     this.endGame();
-            // }
-            //         } else if (vCommandWord.equals("back") && this.back(vCommand)) {
-            //             this.goBack();
-            //         } else if (vCommandWord.equals("quit") && this.quit(vCommand)) {
-            //             this.endGame();
-            //        }
-
             // else command not recognised.
             // return wantToQuit;
+            break;
         }
 
-        private void endGame()
-        {
-            println(aGameModel.getGoodByeString());
-            aGui.enable(false);
+        // if        (vCommandWord == CommandWord.HELP)  {
+        //     this.printHelp();
+        // } else if (vCommandWord == CommandWord.GO)    {
+        //     this.goRoom(vCommand);
+        // } else if (vCommandWord == CommandWord.LOOK)  {
+        //     this.look();
+        // } else if (vCommandWord == CommandWord.ITEMS) {
+        //     this.items();
+        // } else if (vCommandWord == CommandWord.EAT)   {
+        //     this.eat(vCommand);
+        // } else if (vCommandWord == CommandWord.TEST)  {
+        //     this.test(vCommand);
+        // } else if (vCommandWord == CommandWord.TAKE)  {
+        //     this.take(vCommand);
+        // } else if (vCommandWord == CommandWord.DROP)  {
+        //     this.drop(vCommand);
+        // } else if (vCommandWord == CommandWord.BACK)  {
+        //     this.goBack();
+        // } else if (vCommandWord == CommandWord.QUIT)  {
+        //     // wantToQuit = quit(pCommandLine);
+        //     this.endGame();
+        // }
+        //         } else if (vCommandWord.equals("back") && this.back(vCommand)) {
+        //             this.goBack();
+        //         } else if (vCommandWord.equals("quit") && this.quit(vCommand)) {
+        //             this.endGame();
+        //        }
+
+        // else command not recognised.
+        // return wantToQuit;
+    }
+
+    private void endGame()
+    {
+        println(aGameModel.getGoodByeString());
+        aGui.enable(false);
+    }
+
+    public void look()
+    {
+        println();
+        println(this.aGameModel.getCurrentRoom().getLongDescription());
+    }
+
+    public void items()
+    {
+        println();
+        println(this.aGameModel.getPlayer().getItemsInPossesion());
+    }
+
+    public void eat(final Command pCommand)
+    {
+        // TODO
+        if (!pCommand.hasSecondWord()) {
+            println("eat what ?");
+            return;
         }
 
-        public void look()
-        {
-            println();
-            println(this.aGameModel.getCurrentRoom().getLongDescription());
+        String vItemName = pCommand.getSecondWord();
+
+        println(this.aGameModel.take(vItemName));
+    }
+
+    public Boolean back(final Command pCommand) {
+        if (pCommand.hasSecondWord()) {
+            println("Back what ?");
+            return false;
         }
 
-        public void items()
-        {
-            println();
-            println(this.aGameModel.getPlayer().getItemsInPossesion());
-        }
+        //TODO: GameModel should notify there is no previous room.
+        //         if (this.aPreviousRoom.empty()) {
+        //             println("I can't go back any futher !");
+        //             return false;
+        //         }
 
-        public void eat(final Command pCommand)
-        {
-            // TODO
-            if (!pCommand.hasSecondWord()) {
-                println("eat what ?");
-                return;
-            }
+        return true;
+    }
 
-            String vItemName = pCommand.getSecondWord();
+    private void goBack()
+    {
+        this.aGameModel.goBack();
 
-            println(this.aGameModel.take(vItemName));
-        }
-
-        public Boolean back(final Command pCommand) {
-            if (pCommand.hasSecondWord()) {
-                println("Back what ?");
-                return false;
-            }
-
-            //TODO: GameModel should notify there is no previous room.
-            //         if (this.aPreviousRoom.empty()) {
-            //             println("I can't go back any futher !");
-            //             return false;
-            //         }
-
-            return true;
-        }
-
-        private void goBack()
-        {
-            this.aGameModel.goBack();
-
-            // TODO: Use getExit from the Room class
-            //this.aCurrentRoom = this.aPreviousRoom.pop();;
-            // this.printLocationInfo(this.aCurrentRoom);
-            if(aGameModel.getCurrentRoom().getImageName() != null) {
-                aGui.showImage(aGameModel.getCurrentRoom().getImageName());
-            }
-        }
-
-        private void test(final Command pCommand)
-        {
-            if (!pCommand.hasSecondWord()) {
-                println("Test what ?");
-                return;
-            }
-
-            Test vTest = new Test( pCommand.getSecondWord(), this );
-        }
-
-        private void take(final Command pCommand)
-        {
-            if (!pCommand.hasSecondWord()) {
-                println("take what ?");
-                return;
-            }
-
-            String vItemName = pCommand.getSecondWord();
-
-            println(this.aGameModel.take(vItemName));
-        }
-
-        private void drop(final Command pCommand)
-        {
-            if (!pCommand.hasSecondWord()) {
-                println("drop what ?");
-                return;
-            }
-
-            String vItemName = pCommand.getSecondWord();
-
-            println(this.aGameModel.drop(vItemName));
-        }
-
-        // DEBUG METHOD //
-        @Override
-        public void update(Observable o, Object arg)
-        {
-            println("Something Changed !!! arg:" + arg);
-            //System.out.println ("View      : Observable is " + o.getClass() + ", object passed is " + arg.getClass());
-            //model Pull 
-            //ignore obj and ask model for value
-            //System.out.println("" + aGameModel.getCurrentRoom());
+        // TODO: Use getExit from the Room class
+        //this.aCurrentRoom = this.aPreviousRoom.pop();;
+        // this.printLocationInfo(this.aCurrentRoom);
+        if(aGameModel.getCurrentRoom().getImageName() != null) {
+            aGui.showImage(aGameModel.getCurrentRoom().getImageName());
         }
     }
+
+    private void test(final Command pCommand)
+    {
+        if (!pCommand.hasSecondWord()) {
+            println("Test what ?");
+            return;
+        }
+
+        Test vTest = new Test( pCommand.getSecondWord(), this );
+    }
+
+    private void take(final Command pCommand)
+    {
+        if (!pCommand.hasSecondWord()) {
+            println("take what ?");
+            return;
+        }
+
+        String vItemName = pCommand.getSecondWord();
+
+        println(this.aGameModel.take(vItemName));
+    }
+
+    private void drop(final Command pCommand)
+    {
+        if (!pCommand.hasSecondWord()) {
+            println("drop what ?");
+            return;
+        }
+
+        String vItemName = pCommand.getSecondWord();
+
+        println(this.aGameModel.drop(vItemName));
+    }
+
+    // DEBUG METHOD //
+    @Override
+    public void update(Observable o, Object arg)
+    {
+        println("Something Changed !!! arg:" + arg);
+        //System.out.println ("View      : Observable is " + o.getClass() + ", object passed is " + arg.getClass());
+        //model Pull 
+        //ignore obj and ask model for value
+        //System.out.println("" + aGameModel.getCurrentRoom());
+    }
+}

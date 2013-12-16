@@ -155,28 +155,28 @@ public class UserInterface implements ActionListener
         helpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                engine.interpretCommand("help");
+                engine.interpretCommand( CommandWord.HELP.toString() );
             }
         });
         
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                engine.interpretCommand("back");
+                engine.interpretCommand( CommandWord.BACK.toString() );
             }
         });
         
         lookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                engine.interpretCommand("look");
+                engine.interpretCommand( CommandWord.LOOK.toString());
             }
         });
         
         quitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                engine.interpretCommand("quit");
+                engine.interpretCommand( CommandWord.QUIT.toString() );
                 myFrame.dispose();
             }
         });

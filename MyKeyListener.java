@@ -27,16 +27,16 @@ public class MyKeyListener implements KeyListener
     public void keyPressed(KeyEvent e)
     {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            engine.interpretCommand("go North");
+            engine.interpretCommand(CommandWord.GO.toString() + " North");
         }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            engine.interpretCommand("go South");
+            engine.interpretCommand(CommandWord.GO.toString() + " South");
         }
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            engine.interpretCommand("go West");
+            engine.interpretCommand(CommandWord.GO.toString() + " West");
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            engine.interpretCommand("go East");
+            engine.interpretCommand(CommandWord.GO.toString() + " East");
         }
     }
 

@@ -328,7 +328,7 @@ public class GameModel extends Observable
     public String getWelcomeString()
     {
         return "Welcome to this exciting new game \n" +
-        "Type 'help' if you need help.";
+        "Type '" + CommandWord.HELP +  "' if you need help.";
     }
 
     /**
