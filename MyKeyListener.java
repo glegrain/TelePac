@@ -15,7 +15,7 @@ public class MyKeyListener implements KeyListener
     public MyKeyListener(final GameEngine pGameEngine)
     {
         super();
-        engine = pGameEngine;
+        this.engine = pGameEngine;
     }
     
     @Override
@@ -27,16 +27,16 @@ public class MyKeyListener implements KeyListener
     public void keyPressed(KeyEvent e)
     {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            engine.interpretCommand(CommandWord.GO.toString() + " North");
+            this.engine.interpretCommand(CommandWord.GO.toString() + " North");
         }
         if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            engine.interpretCommand(CommandWord.GO.toString() + " South");
+            this.engine.interpretCommand(CommandWord.GO.toString() + " South");
         }
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            engine.interpretCommand(CommandWord.GO.toString() + " West");
+            this.engine.interpretCommand(CommandWord.GO.toString() + " West");
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            engine.interpretCommand(CommandWord.GO.toString() + " East");
+            this.engine.interpretCommand(CommandWord.GO.toString() + " East");
         }
     }
 

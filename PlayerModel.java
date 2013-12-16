@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Observable;
 
 /**
  * Write a description of class PlayerModel here.
@@ -8,24 +9,28 @@ import java.util.Iterator;
  * @author Guillaume Legrain 
  * @version 2013-11
  */
-public class PlayerModel
+public class PlayerModel extends Observable
 {
     // instance variables
     private String aName;
     private Room aCurrentRoom;
     private ItemList aItemsInPossesion; // NOTE: A HashMap might be preferable since we wouldn't need to go trough a loop to get an Item
     private double maxWeight;
+    private int aTimeLimit; // Limit the number of moves to the player
+    private GameEngine aEngine;
 
     /**
      * Constructor for objects of class PlayerModel
      */
-    public PlayerModel(final String pName, final Room pStartRoom)
+    public PlayerModel(final GameEngine aEngine, final String pName, final Room pStartRoom, final int pTimeLimit)
     {
         // initialise instance variables
         this.aName = pName;
         this.maxWeight = 20; // TODO: make default value dynamic
          this.aItemsInPossesion = new ItemList();
         this.setCurrentRoom(pStartRoom);
+        this.aTimeLimit = pTimeLimit;
+        //this.addObserver(this.aEngine); // SHould be done in Game.java ??
     }
 
     /**
@@ -69,6 +74,7 @@ public class PlayerModel
             Item vPickedUpItem = this.aCurrentRoom.getItemAndRemove(pItemName);
             if ( vPickedUpItem.isNamed("cookie") ) {
                 this.maxWeight += vMagicCookieIncrement;
+                this.aTimeLimit *= 10; // Allows the player 10* more moves.
             }
             // check if the player can carry the item
             if ( aItemsInPossesion.getTotalWeight() + vPickedUpItem.getWeight() <= this.maxWeight ) { 
@@ -122,4 +128,28 @@ public class PlayerModel
         
     }
     
+    // TODO: change S.o.p for GUI
+    public void decrementTimeLimit()
+    {
+        if ( this.aTimeLimit <= 0) {
+            System.out.println("GAME OVER ! \nYou don't have any moves left");
+            aEngine.interpretCommand( CommandWord.QUIT.toString() );
+            // FIXME: show quit message
+            //return "You don't have any moves left";
+        } else {
+            this.aTimeLimit--;
+            System.out.println("You have " + this.aTimeLimit + " moves left.");
+            //return "You have " + this.aTimeLimit + " moves left.";
+        }
+        
+        //TODO: add Observer
+        setChanged();
+        notifyObservers(this.aTimeLimit);
+    }
+    
+    
+    public int getTimeLimit()
+    {
+        return this.aTimeLimit;
+    }
 }

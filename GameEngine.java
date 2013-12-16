@@ -42,7 +42,7 @@ public class GameEngine extends Observable implements Observer
      */
     public GameEngine()
     { 
-        this.aGameModel = new GameModel();
+        this.aGameModel = new GameModel(this);
         this.aParser = new Parser();
         this.aPlayer = this.aGameModel.getPlayer();
         //this.createRooms(); //Rooms are created in the gameModel

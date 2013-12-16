@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=GameModel()
+comment0.params=pGameEngine
+comment0.target=GameModel(GameEngine)
 comment1.params=
 comment1.target=void\ createRooms()
 comment1.text=\n\ Initialise\ rooms\n
