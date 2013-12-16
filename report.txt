@@ -1,0 +1,3 @@
+Exercise 7.40:
+We have to add LOOK("look") to CommandWord and
+implement a action in Game.processCommand
