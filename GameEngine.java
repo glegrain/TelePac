@@ -85,9 +85,9 @@ public class GameEngine extends Observable implements Observer
     /**
      * Universal println method, works with all views
      */
-    private void println()
+    public void println()
     {
-        // TODO remove hardcoded views
+        // TODO remove hardcoded views, use MVC instead
         if (this.aGui != null) {
             this.aGui.println();
         }
@@ -99,7 +99,7 @@ public class GameEngine extends Observable implements Observer
     /**
      * Universal println method, works with all views
      */
-    private void println(final String pString)
+    public void println(final String pString)
     {
         // TODO remove hardcoded views
         if (this.aGui != null) {
@@ -182,6 +182,8 @@ public class GameEngine extends Observable implements Observer
 
         if (pCommand.hasSecondWord()) {
             println("Quit what ?");
+            println("Usage: " + CommandWord.QUIT);
+            println();
             return false;
         }
         return true;
@@ -228,6 +230,8 @@ public class GameEngine extends Observable implements Observer
             case TEST :     
             this.test(vCommand);
             break;
+            case BEAMER:
+            this.beamer(vCommand);
             case TAKE :     
             this.take(vCommand);
             break;
@@ -302,6 +306,8 @@ public class GameEngine extends Observable implements Observer
         // TODO
         if (!pCommand.hasSecondWord()) {
             println("eat what ?");
+            println("Usage: eat <cookie>");  // CHECKME
+            println();
             return;
         }
 
@@ -313,6 +319,8 @@ public class GameEngine extends Observable implements Observer
     public Boolean back(final Command pCommand) {
         if (pCommand.hasSecondWord()) {
             println("Back what ?");
+            println("Usage: " + CommandWord.BACK);
+            println();
             return false;
         }
 
@@ -341,6 +349,9 @@ public class GameEngine extends Observable implements Observer
     {
         if (!pCommand.hasSecondWord()) {
             println("Test what ?");
+            println("Usage: " + CommandWord.TEST + " <filename>");
+            println();
+            // TODO: show available test files
             return;
         }
 
@@ -351,6 +362,8 @@ public class GameEngine extends Observable implements Observer
     {
         if (!pCommand.hasSecondWord()) {
             println("take what ?");
+            println("Usage: " + CommandWord.TAKE + " <itemName>");
+            println();
             return;
         }
 
@@ -363,6 +376,8 @@ public class GameEngine extends Observable implements Observer
     {
         if (!pCommand.hasSecondWord()) {
             println("drop what ?");
+            println("Usage: " + CommandWord.DROP + " <itemName>");
+            println();
             return;
         }
 
@@ -371,11 +386,24 @@ public class GameEngine extends Observable implements Observer
         println(this.aGameModel.drop(vItemName));
     }
 
+    private void beamer(final Command pCommand)
+    {
+        if (!pCommand.hasSecondWord()) {
+            println("Please specify a beamer.");
+            println("Usage: " + CommandWord.BEAMER + " <beamerName>");
+            println();
+            return;
+        }
+
+        String vBeamerName = pCommand.getSecondWord();
+        println( this.aGameModel.useBeamer(vBeamerName));
+    }
+   
     // DEBUG METHOD //
     @Override
     public void update(Observable o, Object arg)
     {
-        println("Something Changed !!! arg:" + arg);
+        println("DEBUG: Something Changed !!! arg:" + arg);
         //System.out.println ("View      : Observable is " + o.getClass() + ", object passed is " + arg.getClass());
         //model Pull 
         //ignore obj and ask model for value

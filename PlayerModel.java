@@ -22,14 +22,15 @@ public class PlayerModel extends Observable
     /**
      * Constructor for objects of class PlayerModel
      */
-    public PlayerModel(final GameEngine aEngine, final String pName, final Room pStartRoom, final int pTimeLimit)
+    public PlayerModel(final GameEngine pEngine, final String pName, final Room pStartRoom, final int pTimeLimit)
     {
         // initialise instance variables
         this.aName = pName;
         this.maxWeight = 20; // TODO: make default value dynamic
-         this.aItemsInPossesion = new ItemList();
+        this.aItemsInPossesion = new ItemList();
         this.setCurrentRoom(pStartRoom);
         this.aTimeLimit = pTimeLimit;
+        this.aEngine = pEngine;
         //this.addObserver(this.aEngine); // SHould be done in Game.java ??
     }
 
@@ -132,13 +133,12 @@ public class PlayerModel extends Observable
     public void decrementTimeLimit()
     {
         if ( this.aTimeLimit <= 0) {
-            System.out.println("GAME OVER ! \nYou don't have any moves left");
+            this.aEngine.println("GAME OVER ! \nYou don't have any moves left");
             aEngine.interpretCommand( CommandWord.QUIT.toString() );
-            // FIXME: show quit message
             //return "You don't have any moves left";
         } else {
             this.aTimeLimit--;
-            System.out.println("You have " + this.aTimeLimit + " moves left.");
+            this.aEngine.println("You have " + this.aTimeLimit + " moves left.");
             //return "You have " + this.aTimeLimit + " moves left.";
         }
         
@@ -147,9 +147,17 @@ public class PlayerModel extends Observable
         notifyObservers(this.aTimeLimit);
     }
     
-    
     public int getTimeLimit()
     {
         return this.aTimeLimit;
+    }
+    
+    public boolean hasItemNamed(final String pItemName)
+    {
+        return this.aItemsInPossesion.hasItemNamed(pItemName);
+    }
+    
+    public Item getItemNamed(final String pItemName) {
+        return this.aItemsInPossesion.get(pItemName);
     }
 }

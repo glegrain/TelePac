@@ -68,14 +68,16 @@ public class Parser
             } // if
         } // if
 
-        // Now check whether this word is known. If so, create a command
-        // with it. If not, create a "null" command (for unknown command).
-        if ( this.aValidCommands.isCommand( vWord1 ) ) {
-            return new Command( this.aValidCommands.getCommandWord(vWord1), vWord2 );
-        }
-        else {
-            return new Command( null, null ); 
-        }
+        return new Command(aValidCommands.getCommandWord(vWord1), vWord2);
+        
+//         // Now check whether this word is known. If so, create a command
+//         // with it. If not, create a "null" command (for unknown command).
+//         if ( this.aValidCommands.isCommand( vWord1 ) ) {
+//             return new Command( this.aValidCommands.getCommandWord(vWord1), vWord2 );
+//         }
+//         else {
+//             return new Command( null, null ); 
+//         }
     } // getCommand()
     
     /**

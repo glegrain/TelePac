@@ -1,10 +1,14 @@
 #BlueJ class context
-comment0.params=aEngine\ pName\ pStartRoom\ pTimeLimit
+comment0.params=pEngine\ pName\ pStartRoom\ pTimeLimit
 comment0.target=PlayerModel(GameEngine,\ java.lang.String,\ Room,\ int)
 comment0.text=\n\ Constructor\ for\ objects\ of\ class\ PlayerModel\n
 comment1.params=
 comment1.target=java.lang.String\ getName()
 comment1.text=\n\ Get\ the\ player's\ name\n
+comment10.params=pItemName
+comment10.target=boolean\ hasItemNamed(java.lang.String)
+comment11.params=pItemName
+comment11.target=Item\ getItemNamed(java.lang.String)
 comment2.params=
 comment2.target=Room\ getCurrentRoom()
 comment3.params=pCurrentRoom
@@ -23,4 +27,4 @@ comment8.params=
 comment8.target=void\ decrementTimeLimit()
 comment9.params=
 comment9.target=int\ getTimeLimit()
-numComments=10
+numComments=12

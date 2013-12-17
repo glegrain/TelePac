@@ -54,7 +54,8 @@ public class TextView implements Observer
     {
         System.out.println();
     }
-
+    
+    @Override
     public void update(Observable o, Object arg)
     {
         System.out.println("UPDATE: " + arg);

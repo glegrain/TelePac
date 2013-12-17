@@ -26,7 +26,7 @@ public class Test
             System.out.println("ERROR: " + e);
         }
 
-        while( aSc.hasNextLine() ) {
+        while( this.aSc != null && aSc.hasNextLine() ) {
             String vCommandString = aSc.nextLine();
             System.out.println("Executing: " + vCommandString);
             this.aEngine.interpretCommand(vCommandString); //FIXME: only the first command is executed

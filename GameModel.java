@@ -36,8 +36,8 @@ public class GameModel extends Observable
     public GameModel(final GameEngine pGameEngine)
     {
         this.aRooms = new HashMap<String,Room>();
-        this.createRooms();
         this.aGameEngine = pGameEngine;
+        this.createRooms();
     }
 
     /**
@@ -221,6 +221,7 @@ public class GameModel extends Observable
         /*aRooms.get("r56").setExit("South", aRooms.get("r66"));*//*aRooms.get("r56").setExit("West", aRooms.get("r55"));*/
         /*aRooms.get("r66").setExit("South", aRooms.get(""));*/     aRooms.get("r66").setExit("West", aRooms.get("r65"));
 
+        
         // Place Items
         aRooms.get("r22").addItem(new Item("strawberry", 6));
         aRooms.get("r52").addItem(new Item("apple", 5));
@@ -229,13 +230,16 @@ public class GameModel extends Observable
         aRooms.get("r65").addItem(new Item("key", 3));
 
         aRooms.get("r00").addItem(new Item("cookie"));
-
+        
+        aRooms.get("r60").addItem(new Beamer(aRooms.get("r60")));
+        
         // Initialize current Room
         //this.aCurrentRoom = aRooms.get("r00");
         //initialize current Room and player
         // TODO: ask for player name
         // String vName = javax.swing.JOptionPane.showInputDialog( "What is your name ?" );
         this.aPlayer = new PlayerModel(this.aGameEngine, "Bob", aRooms.get("r00"), 10);
+
 
         // Notify interested listeners
         setChanged();
@@ -279,6 +283,8 @@ public class GameModel extends Observable
     public void goBack()
     {
         if (this.aPreviousRoom.empty()) {
+            setChanged();
+            notifyObservers("You cannot go back any futher.");
             return;
         }
 
@@ -292,7 +298,7 @@ public class GameModel extends Observable
 
     public String take(final String pItemName)
     {
-        if (this.aPlayer. pickUpItem(pItemName) ) {
+        if (this.aPlayer.pickUpItem(pItemName) ) {
             return "You picked up a " + pItemName;
         } else {
             return "Ouups, I can't find your " + pItemName;
@@ -302,7 +308,7 @@ public class GameModel extends Observable
 
     public String drop(final String pItemName)
     {
-        if (this.aPlayer. dropItem(pItemName) ) {
+        if (this.aPlayer.dropItem(pItemName) ) {
             return "You dropped your " + pItemName;
         } else {
             return "Ouups, I can't find your " + pItemName;
@@ -354,5 +360,16 @@ public class GameModel extends Observable
     public PlayerModel getPlayer()
     {
         return this.aPlayer;
+    }
+    
+    public String useBeamer(final String pBeamerName)
+    {
+        if ( this.aPlayer.hasItemNamed(pBeamerName) ) {
+            Beamer vBeamer = (Beamer) this.aPlayer.getItemNamed(pBeamerName);
+            this.goRoom(vBeamer.getOriginRoom());
+            return "Teleportation done !\n" + this.getLocationInfoString();
+        } else {
+            return "You cannot teleport";
+        }
     }
 }

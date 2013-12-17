@@ -199,7 +199,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "You are " + aDescription + ".\n" 
+        return "You are in " + aDescription + ".\n" 
         + this.getItemsString() + "\n"
         + this.getExitString();
     }
