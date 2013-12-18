@@ -6,3 +6,7 @@ back
 back
 eat
 help
+beamer
+take
+eat
+drop

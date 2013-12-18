@@ -12,3 +12,17 @@ Exercise 7.43: (Trap door)
 trap door player in room r06
 TODO: empty previous room stack if trapdoor (the back command shouln't work)
 TODO: show message
+
+Exercise 7.44: (beamer)
+seems ok
+
+Exercise 7.45: (locked door) (opt.)
+TODO
+
+Exercise 7.45.1: (update test files)
+TODO
+
+Exercise 7.45.2: (update javadoc)
+TODO
+
+
