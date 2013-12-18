@@ -231,7 +231,10 @@ public class GameModel extends Observable
 
         aRooms.get("r00").addItem(new Item("cookie"));
         
-        aRooms.get("r60").addItem(new Beamer(aRooms.get("r60")));
+        aRooms.get("r60").addItem(new Beamer("beamer-r60",aRooms.get("r60")));
+        aRooms.get("r01").addItem(new Beamer("beamer-r01",aRooms.get("r01")));
+        aRooms.get("r66").addItem(new Beamer("beamer-r66",aRooms.get("r66")));
+        aRooms.get("r06").addItem(new Beamer("beamer-r06",aRooms.get("r06")));
         
         // Initialize current Room
         //this.aCurrentRoom = aRooms.get("r00");

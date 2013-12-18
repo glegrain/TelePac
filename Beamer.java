@@ -10,9 +10,9 @@ public class Beamer extends Item
     private Room aOriginRoom;
     private PlayerModel aPlayerModel;
     
-    public Beamer(final Room pOriginRoom)
+    public Beamer(final String pDescription, final Room pOriginRoom)
     {
-        super("beamer", 1); //TODO: change name for multiple beamers
+        super(pDescription, 1); //TODO: change name for multiple beamers
         this.aOriginRoom = pOriginRoom;
         //this.aPlayerModel = pPlayerModel;
     }

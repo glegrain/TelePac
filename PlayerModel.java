@@ -28,9 +28,9 @@ public class PlayerModel extends Observable
         this.aName = pName;
         this.maxWeight = 20; // TODO: make default value dynamic
         this.aItemsInPossesion = new ItemList();
+        this.aEngine = pEngine;
         this.setCurrentRoom(pStartRoom);
         this.aTimeLimit = pTimeLimit;
-        this.aEngine = pEngine;
         //this.addObserver(this.aEngine); // SHould be done in Game.java ??
     }
 

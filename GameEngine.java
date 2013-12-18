@@ -232,6 +232,7 @@ public class GameEngine extends Observable implements Observer
             break;
             case BEAMER:
             this.beamer(vCommand);
+            break;
             case TAKE :     
             this.take(vCommand);
             break;
@@ -250,37 +251,6 @@ public class GameEngine extends Observable implements Observer
             // return wantToQuit;
             break;
         }
-
-        // if        (vCommandWord == CommandWord.HELP)  {
-        //     this.printHelp();
-        // } else if (vCommandWord == CommandWord.GO)    {
-        //     this.goRoom(vCommand);
-        // } else if (vCommandWord == CommandWord.LOOK)  {
-        //     this.look();
-        // } else if (vCommandWord == CommandWord.ITEMS) {
-        //     this.items();
-        // } else if (vCommandWord == CommandWord.EAT)   {
-        //     this.eat(vCommand);
-        // } else if (vCommandWord == CommandWord.TEST)  {
-        //     this.test(vCommand);
-        // } else if (vCommandWord == CommandWord.TAKE)  {
-        //     this.take(vCommand);
-        // } else if (vCommandWord == CommandWord.DROP)  {
-        //     this.drop(vCommand);
-        // } else if (vCommandWord == CommandWord.BACK)  {
-        //     this.goBack();
-        // } else if (vCommandWord == CommandWord.QUIT)  {
-        //     // wantToQuit = quit(pCommandLine);
-        //     this.endGame();
-        // }
-        //         } else if (vCommandWord.equals("back") && this.back(vCommand)) {
-        //             this.goBack();
-        //         } else if (vCommandWord.equals("quit") && this.quit(vCommand)) {
-        //             this.endGame();
-        //        }
-
-        // else command not recognised.
-        // return wantToQuit;
     }
 
     private void endGame()
@@ -338,10 +308,11 @@ public class GameEngine extends Observable implements Observer
         this.aGameModel.goBack();
 
         // TODO: Use getExit from the Room class
-        //this.aCurrentRoom = this.aPreviousRoom.pop();;
+        // this.aCurrentRoom = this.aPreviousRoom.pop();;
         // this.printLocationInfo(this.aCurrentRoom);
+        
         if(aGameModel.getCurrentRoom().getImageName() != null) {
-            aGui.showImage(aGameModel.getCurrentRoom().getImageName());
+           aGui.showImage(aGameModel.getCurrentRoom().getImageName());
         }
     }
 
@@ -397,6 +368,16 @@ public class GameEngine extends Observable implements Observer
 
         String vBeamerName = pCommand.getSecondWord();
         println( this.aGameModel.useBeamer(vBeamerName));
+        
+        // Update View: UserInterface should listen to room change instead ??
+        if(this.aGameModel.getCurrentRoom().getImageName() != null) {
+            this.aGui.showImage(aGameModel.getCurrentRoom().getImageName());
+        }
+    }
+    
+    public UserInterface getUserInterface()
+    {
+        return this.aGui;
     }
    
     // DEBUG METHOD //
