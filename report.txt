@@ -7,6 +7,8 @@ If we change the word associated with the help command in CommandWord, this chan
 
 Exercise 7.42:
 TODO: implement mvc
+Added KeyListener to change room.
+You can now go to another room using the keyboard's arrow keys.
 
 Exercise 7.43: (Trap door)
 trap door player in room r06
@@ -38,3 +40,15 @@ TODO
 Exercise 7.46.2:
 Beamer was already a item subclass
 Created TrapRoom subclass (TODO: clear history when entering the room)
+
+
+
+
+
+
+Exercise 7.53: (main)
+Added public static void main(String[] args) to instantiate a new game
+
+
+Exercise 7.54: (without BlueJ)
+Launch the game using "java Game" in the game's directory
