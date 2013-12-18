@@ -36,4 +36,4 @@ TODO
 
 Exercise 7.46.2:
 Beamer was already a item subclass
-Created TrapRoom subclass
+Created TrapRoom subclass (TODO: clear history when entering the room)
