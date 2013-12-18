@@ -10,3 +10,20 @@ beamer
 take
 eat
 drop
+go South
+go South
+go South
+go South
+go South
+go South
+take beamer-r60
+go North
+go North
+beamer beamer-60
+go North
+go North
+go North
+go North
+go East
+go East
+take strawberry

@@ -33,6 +33,10 @@ public class GameModel extends Observable
     private PlayerModel aPlayer;
     private GameEngine aGameEngine;
 
+    /**
+     * create a new GameModel
+     * @param pGameEngine
+     */
     public GameModel(final GameEngine pGameEngine)
     {
         this.aRooms = new HashMap<String,Room>();
@@ -251,7 +255,7 @@ public class GameModel extends Observable
 
     /**
      * Check valid direction and define the new current position
-     * @param pCommand
+     * @param pNextRoom
      */
     public void goRoom(final Room pNextRoom)
     {
@@ -283,6 +287,10 @@ public class GameModel extends Observable
         notifyObservers(this.aPlayer.getCurrentRoom());
     }
 
+    /**
+     * Check if there is a previous Room
+     * Define the new current position as the previous position
+     */
     public void goBack()
     {
         if (this.aPreviousRoom.empty()) {
@@ -299,6 +307,11 @@ public class GameModel extends Observable
         notifyObservers();
     }
 
+    /**
+     * Add the item to the player's inventory or warned the player that there is nothing
+     * @param pItemName
+     * @return String
+     */
     public String take(final String pItemName)
     {
         if (this.aPlayer.pickUpItem(pItemName) ) {
@@ -309,6 +322,12 @@ public class GameModel extends Observable
         // TODO: Show inventory
     }
 
+    /**
+     * Remove the item to the player's inventory and add them to the Room's items
+     * or warned the player that there is no item with this name
+     * @param pItemName
+     * @return String
+     */
     public String drop(final String pItemName)
     {
         if (this.aPlayer.dropItem(pItemName) ) {
@@ -322,7 +341,7 @@ public class GameModel extends Observable
     //  Accessors
     /**
      * Returns the current Room
-     * @Return Room
+     * @return Room
      */
 
     public Room getCurrentRoom()
@@ -332,7 +351,7 @@ public class GameModel extends Observable
 
     /**
      * Returns a String containing the welcome message
-     * @returns String
+     * @return String
      */
     public String getWelcomeString()
     {
@@ -342,24 +361,36 @@ public class GameModel extends Observable
 
     /**
      * Returns a String containing the Good Bye message
-     * @returns String
+     * @return String
      */
     public String getGoodByeString()
     {
         return "Thank you for playing.  Good bye.";
     }
 
+    /**
+     * Returns a String containing the introduction of the Help message
+     * @return String
+     */
     public String getHelpString()
     {
         return "You are lost. You are alone." + "\n"
         + "You wander around at the university.";
     }
 
+    /**
+     * Returns a String containing the current location
+     * @return String
+     */
     public String getLocationInfoString() 
     {
         return this.getCurrentRoom().getLongDescription();
     }
 
+    /**
+     * Returns the PlayerModel
+     * @return PlayerModel
+     */
     public PlayerModel getPlayer()
     {
         return this.aPlayer;

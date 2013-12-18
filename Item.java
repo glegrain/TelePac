@@ -45,6 +45,10 @@ public class Item
         return this.aDescription;
     }
     
+    /**
+     * Get Item's description
+     * @return The Item's description
+     */
     @Override
     public String toString()
     {
@@ -62,6 +66,7 @@ public class Item
     
     /**
      * Check if items are equals
+     * @return boolean
      */
     @Override
     public boolean equals(Object o)
@@ -84,7 +89,7 @@ public class Item
     /**
      * Check if the item is named pName
      * @param pItemName
-     * @return
+     * @return boolean
      */
     public boolean isNamed(final String pName) {
         return this.getDescription().equals(pName);

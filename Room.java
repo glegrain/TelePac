@@ -102,13 +102,17 @@ public class Room
     /**
      * Check if the room has a given item String
      * @param pItem
-     * @return
+     * @return boolean
      */
     public boolean hasItemNamed(final String pItemName)
     {
         return this.aItems.hasItemNamed(pItemName);
     }
-    
+
+    /**
+     * Returns the ItemList
+     * @return aItem 
+     */
     public ItemList getItems()
     {
         return this.aItems;
@@ -117,7 +121,7 @@ public class Room
     /**
      * Check if the room has a given Item
      * @param pItem
-     * @return
+     * @return boolean
      */
     public boolean hasItem(final Item pItem)
     {
@@ -126,7 +130,7 @@ public class Room
     
     /**
      * Get the room's item
-     * @return The room's item
+     * @return The room's item String
      */
     public String getItemsString()
     {
@@ -141,7 +145,7 @@ public class Room
     /**
      * get item reference from item name
      * @param pItemName
-     * @return
+     * @return Item
      */
     public Item getItem(final String pItemName)
     {
@@ -155,7 +159,7 @@ public class Room
     /**
      * get item reference from item name and remove from current room
      * @param pItemName
-     * @return
+     * @return Item
      */
     public Item getItemAndRemove(final String pItemName)
     {
@@ -168,6 +172,7 @@ public class Room
     /**
      * Go to another Room
      * @param pDirection
+     * @return Room
      */
     public Room leaveRoom(final String pDirection)
     {
@@ -176,7 +181,9 @@ public class Room
     }
     
     /**
-     *@return an exit the direction indicates 
+     * Returns the Exit pointed by the Direction
+     * param pDirection
+     * @return an exit the direction indicates 
      */
     public Room getExit(final String pDirection) {
         return aExits.get(pDirection);
@@ -222,6 +229,7 @@ public class Room
 
     /**
      * Return a string describing the room's image name
+     * @return aImageName
      */
     public String getImageName()
     {
