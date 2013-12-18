@@ -25,9 +25,15 @@ TODO
 Exercise 7.45.2: (update javadoc)
 TODO
 
-Exercise 7.46:
+Exercise 7.46: (TransporterRoom)
 Created a new TransporterRoom subclass from Room overriding getExit
 Change r60, .. instantiation to TransporterRoom instead of Room
 Added a getRooms method to the GameModel to get a Room HasMap
 Converter the HashMap into a ArryList to select a value from a Random integer instead of a string description.
 
+Exercise 7.46.1: (alea)
+TODO
+
+Exercise 7.46.2:
+Beamer was already a item subclass
+Created TrapRoom subclass
