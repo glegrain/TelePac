@@ -188,7 +188,7 @@ public class GameModel extends Observable
         /*aRooms.get("r64").setExit("South", aRooms.get(""));*/   /*aRooms.get("r64").setExit("West", aRooms.get("r63"));*/
 
         //Col. 5
-        /*aRooms.get("r05").setExit("North", aRooms.get(""));*/   /*aRooms.get("r05").setExit("East", aRooms.get("r06"));*/
+        /*aRooms.get("r05").setExit("North", aRooms.get(""));*/     aRooms.get("r05").setExit("East", aRooms.get("r06")); // TRAPDOOR
         aRooms.get("r15").setExit("North", aRooms.get("r05"));    /*aRooms.get("r15").setExit("East", aRooms.get("r16"));*/
         aRooms.get("r25").setExit("North", aRooms.get("r15"));      aRooms.get("r25").setExit("East", aRooms.get("r26"));
         /*aRooms.get("r35").setExit("North", aRooms.get("r25"));*//*aRooms.get("r35").setExit("East", aRooms.get("r36"));*/
