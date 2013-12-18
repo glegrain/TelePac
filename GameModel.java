@@ -139,15 +139,15 @@ public class GameModel extends Observable
         //Col. 2
         /*aRooms.get("r02").setExit("North", aRooms.get(""));*/     aRooms.get("r02").setExit("East", aRooms.get("r03"));
         /*aRooms.get("r12").setExit("North", aRooms.get("r02"));*/  aRooms.get("r12").setExit("East", aRooms.get("r13"));
-        /*aRooms.get("r22").setExit("North", aRooms.get("r12"));*//*aRooms.get("r22").setExit("East", aRooms.get("r23"));
+        /*aRooms.get("r22").setExit("North", aRooms.get("r12"));*//*aRooms.get("r22").setExit("East", aRooms.get("r23"));*/
         aRooms.get("r32").setExit("North", aRooms.get("r22"));  /*aRooms.get("r32").setExit("East", aRooms.get("r33"));*/
         aRooms.get("r42").setExit("North", aRooms.get("r32"));  /*aRooms.get("r42").setExit("East", aRooms.get("r43"));*/
         aRooms.get("r52").setExit("North", aRooms.get("r42"));    aRooms.get("r52").setExit("East", aRooms.get("r53"));
         /*aRooms.get("r62").setExit("North", aRooms.get("r52"));*/  aRooms.get("r62").setExit("East", aRooms.get("r63"));
 
-        /*aRooms.get("r02").setExit("South", aRooms.get("r12"));*/  aRooms.get("r02").setExit("West", aRooms.get("r01"));
+        /*aRooms.get("r02").setExit("South", aRooms.get("r12"));*//*aRooms.get("r02").setExit("West", aRooms.get("r01"));*/
         /*aRooms.get("r12").setExit("South", aRooms.get("r22"));*/  aRooms.get("r12").setExit("West", aRooms.get("r11"));
-        aRooms.get("r22").setExit("South", aRooms.get("r32"));  /*aRooms.get("r22").setExit("West", aRooms.get("r21"));*/
+        aRooms.get("r22").setExit("South", aRooms.get("r32"));      aRooms.get("r22").setExit("West", aRooms.get("r21"));
         aRooms.get("r32").setExit("South", aRooms.get("r42"));  /*aRooms.get("r32").setExit("West", aRooms.get("r31"));*/
         aRooms.get("r42").setExit("South", aRooms.get("r52"));  /*aRooms.get("r42").setExit("West", aRooms.get("r41"));*/
         /*aRooms.get("r52").setExit("South", aRooms.get("r62"));*/  aRooms.get("r52").setExit("West", aRooms.get("r51"));
@@ -180,28 +180,28 @@ public class GameModel extends Observable
         aRooms.get("r64").setExit("North", aRooms.get("r54"));  /*aRooms.get("r64").setExit("East", aRooms.get("r65"));*/
 
         /*aRooms.get("r04").setExit("South", aRooms.get("r14"));*/  aRooms.get("r04").setExit("West", aRooms.get("r03"));
-        aRooms.get("r14").setExit("South", aRooms.get("r24"));  /*aRooms.get("r14").setExit("West", aRooms.get("r13"));*/
-        aRooms.get("r24").setExit("South", aRooms.get("r34"));    aRooms.get("r24").setExit("West", aRooms.get("r23"));
-        aRooms.get("r34").setExit("South", aRooms.get("r44"));    aRooms.get("r34").setExit("West", aRooms.get("r33"));
+        aRooms.get("r14").setExit("South", aRooms.get("r24"));    aRooms.get("r14").setExit("West", aRooms.get("r13"));
+        aRooms.get("r24").setExit("South", aRooms.get("r34"));  /*aRooms.get("r24").setExit("West", aRooms.get("r23"));*/
+        aRooms.get("r34").setExit("South", aRooms.get("r44"));  /*aRooms.get("r34").setExit("West", aRooms.get("r33"));*/
         aRooms.get("r44").setExit("South", aRooms.get("r54"));  /*aRooms.get("r44").setExit("West", aRooms.get("r43"));*/
-        aRooms.get("r54").setExit("South", aRooms.get("r64"));    aRooms.get("r54").setExit("West", aRooms.get("r53"));
+        aRooms.get("r54").setExit("South", aRooms.get("r64"));  /*aRooms.get("r54").setExit("West", aRooms.get("r53"));*/
         /*aRooms.get("r64").setExit("South", aRooms.get(""));*/   /*aRooms.get("r64").setExit("West", aRooms.get("r63"));*/
 
         //Col. 5
-        /*aRooms.get("r05").setExit("North", aRooms.get(""));*/     aRooms.get("r05").setExit("East", aRooms.get("r06"));
-        aRooms.get("r15").setExit("North", aRooms.get("r05"));  /*aRooms.get("r15").setExit("East", aRooms.get("r16"));*/
-        aRooms.get("r25").setExit("North", aRooms.get("r15"));  /*aRooms.get("r25").setExit("East", aRooms.get("r26"));*/
-        /*aRooms.get("r35").setExit("North", aRooms.get("r25"));*/  aRooms.get("r35").setExit("East", aRooms.get("r36"));
+        /*aRooms.get("r05").setExit("North", aRooms.get(""));*/   /*aRooms.get("r05").setExit("East", aRooms.get("r06"));*/
+        aRooms.get("r15").setExit("North", aRooms.get("r05"));    /*aRooms.get("r15").setExit("East", aRooms.get("r16"));*/
+        aRooms.get("r25").setExit("North", aRooms.get("r15"));      aRooms.get("r25").setExit("East", aRooms.get("r26"));
+        /*aRooms.get("r35").setExit("North", aRooms.get("r25"));*//*aRooms.get("r35").setExit("East", aRooms.get("r36"));*/
         /*aRooms.get("r45").setExit("North", aRooms.get("r35"));*/  aRooms.get("r45").setExit("East", aRooms.get("r46"));
-        aRooms.get("r55").setExit("North", aRooms.get("r45"));  /*aRooms.get("r55").setExit("East", aRooms.get("r56"));*/
-        aRooms.get("r65").setExit("North", aRooms.get("r55"));  /*aRooms.get("r65").setExit("East", aRooms.get("r56"));*/
+        aRooms.get("r55").setExit("North", aRooms.get("r45"));    /*aRooms.get("r55").setExit("East", aRooms.get("r56"));*/
+        aRooms.get("r65").setExit("North", aRooms.get("r55"));      aRooms.get("r65").setExit("East", aRooms.get("r66"));
 
-        aRooms.get("r05").setExit("South", aRooms.get("r15"));    aRooms.get("r05").setExit("West", aRooms.get("r04"));
-        aRooms.get("r15").setExit("South", aRooms.get("r25"));  /*aRooms.get("r15").setExit("West", aRooms.get("r14"));*/
-        aRooms.get("r25").setExit("South", aRooms.get("r35"));  /*aRooms.get("r25").setExit("West", aRooms.get("r24"));*/
+        aRooms.get("r05").setExit("South", aRooms.get("r15"));      aRooms.get("r05").setExit("West", aRooms.get("r04"));
+        aRooms.get("r15").setExit("South", aRooms.get("r25"));    /*aRooms.get("r15").setExit("West", aRooms.get("r14"));*/
+        /*aRooms.get("r25").setExit("South", aRooms.get("r35"));*//*aRooms.get("r25").setExit("West", aRooms.get("r24"));*/
         /*aRooms.get("r35").setExit("South", aRooms.get("r45"));*/  aRooms.get("r35").setExit("West", aRooms.get("r34"));
-        aRooms.get("r45").setExit("South", aRooms.get("r55"));  /*aRooms.get("r45").setExit("West", aRooms.get("r44"));*/
-        aRooms.get("r55").setExit("South", aRooms.get("r65"));    aRooms.get("r55").setExit("West", aRooms.get("r54"));
+        aRooms.get("r45").setExit("South", aRooms.get("r55"));    /*aRooms.get("r45").setExit("West", aRooms.get("r44"));*/
+        aRooms.get("r55").setExit("South", aRooms.get("r65"));      aRooms.get("r55").setExit("West", aRooms.get("r54"));
         /*aRooms.get("r65").setExit("South", aRooms.get(""));*/   /*aRooms.get("r65").setExit("West", aRooms.get("r64"));*/
 
         //Col. 6
@@ -238,7 +238,7 @@ public class GameModel extends Observable
         //initialize current Room and player
         // TODO: ask for player name
         // String vName = javax.swing.JOptionPane.showInputDialog( "What is your name ?" );
-        this.aPlayer = new PlayerModel(this.aGameEngine, "Bob", aRooms.get("r00"), 10);
+        this.aPlayer = new PlayerModel(this.aGameEngine, "Bob", aRooms.get("r00"), 300);
 
 
         // Notify interested listeners
