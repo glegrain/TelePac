@@ -174,6 +174,7 @@ public class Room
      * @param pDirection
      * @return Room
      */
+    // NOTE: usage ??? difference with getExit ??
     public Room leaveRoom(final String pDirection)
     {
         return aExits.get(pDirection);
@@ -185,7 +186,8 @@ public class Room
      * param pDirection
      * @return an exit the direction indicates 
      */
-    public Room getExit(final String pDirection) {
+    public Room getExit(final String pDirection)
+    {
         return aExits.get(pDirection);
     }
 

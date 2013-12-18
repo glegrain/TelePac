@@ -98,13 +98,13 @@ public class GameModel extends Observable
         
         //Create Rooms
         // TODO: cleanup THIS BIG MESS !!!!!!!
-        aRooms.put("r00", new Room("r00", "Images/r00.png")); aRooms.put("r01", new Room("r01", "Images/r01.png")); aRooms.put("r02", new Room("r02", "Images/r02.png")); aRooms.put("r03", new Room("r03", "Images/r03.png")); aRooms.put("r04", new Room("r04", "Images/r04.png")); aRooms.put("r05", new Room("r05", "Images/r05.png")); aRooms.put("r06", new Room("r06", "Images/r06.png")); 
-        aRooms.put("r10", new Room("r10", "Images/r10.png")); aRooms.put("r11", new Room("r11", "Images/r11.png")); aRooms.put("r12", new Room("r12", "Images/r12.png")); aRooms.put("r13", new Room("r13", "Images/r13.png")); aRooms.put("r14", new Room("r14", "Images/r14.png")); aRooms.put("r15", new Room("r15", "Images/r15.png")); aRooms.put("r16", new Room("r16", "Images/r16.png")); 
-        aRooms.put("r20", new Room("r20", "Images/r20.png")); aRooms.put("r21", new Room("r21", "Images/r21.png")); aRooms.put("r22", new Room("r22", "Images/r22.png")); aRooms.put("r23", new Room("r23", "Images/r23.png")); aRooms.put("r24", new Room("r24", "Images/r24.png")); aRooms.put("r25", new Room("r25", "Images/r25.png")); aRooms.put("r26", new Room("r26", "Images/r26.png")); 
-        aRooms.put("r30", new Room("r30", "Images/r30.png")); aRooms.put("r31", new Room("r31", "Images/r31.png")); aRooms.put("r32", new Room("r32", "Images/r32.png")); aRooms.put("r33", new Room("r33", "Images/r33.png")); aRooms.put("r34", new Room("r34", "Images/r34.png")); aRooms.put("r35", new Room("r35", "Images/r35.png")); aRooms.put("r36", new Room("r36", "Images/r36.png")); 
-        aRooms.put("r40", new Room("r40", "Images/r40.png")); aRooms.put("r41", new Room("r41", "Images/r41.png")); aRooms.put("r42", new Room("r42", "Images/r42.png")); aRooms.put("r43", new Room("r43", "Images/r43.png")); aRooms.put("r44", new Room("r44", "Images/r44.png")); aRooms.put("r45", new Room("r45", "Images/r45.png")); aRooms.put("r46", new Room("r46", "Images/r46.png")); 
-        aRooms.put("r50", new Room("r50", "Images/r50.png")); aRooms.put("r51", new Room("r51", "Images/r51.png")); aRooms.put("r52", new Room("r52", "Images/r52.png")); aRooms.put("r53", new Room("r53", "Images/r53.png")); aRooms.put("r54", new Room("r54", "Images/r54.png")); aRooms.put("r55", new Room("r55", "Images/r55.png")); aRooms.put("r56", new Room("r56", "Images/r56.png")); 
-        aRooms.put("r60", new Room("r60", "Images/r60.png")); aRooms.put("r61", new Room("r61", "Images/r61.png")); aRooms.put("r62", new Room("r62", "Images/r62.png")); aRooms.put("r63", new Room("r63", "Images/r63.png")); aRooms.put("r64", new Room("r64", "Images/r64.png")); aRooms.put("r65", new Room("r65", "Images/r65.png")); aRooms.put("r66", new Room("r66", "Images/r66.png"));
+        aRooms.put("r00", new Room("r00", "Images/r00.png"));            aRooms.put("r01", new TransporterRoom("r01", "Images/r01.png", this)); aRooms.put("r02", new Room("r02", "Images/r02.png")); aRooms.put("r03", new Room("r03", "Images/r03.png")); aRooms.put("r04", new Room("r04", "Images/r04.png")); aRooms.put("r05", new Room("r05", "Images/r05.png")); aRooms.put("r06", new TransporterRoom("r06", "Images/r06.png", this)); 
+        aRooms.put("r10", new Room("r10", "Images/r10.png"));            aRooms.put("r11", new Room("r11", "Images/r11.png")); aRooms.put("r12", new Room("r12", "Images/r12.png")); aRooms.put("r13", new Room("r13", "Images/r13.png")); aRooms.put("r14", new Room("r14", "Images/r14.png")); aRooms.put("r15", new Room("r15", "Images/r15.png")); aRooms.put("r16", new Room("r16", "Images/r16.png")); 
+        aRooms.put("r20", new Room("r20", "Images/r20.png"));            aRooms.put("r21", new Room("r21", "Images/r21.png")); aRooms.put("r22", new Room("r22", "Images/r22.png")); aRooms.put("r23", new Room("r23", "Images/r23.png")); aRooms.put("r24", new Room("r24", "Images/r24.png")); aRooms.put("r25", new Room("r25", "Images/r25.png")); aRooms.put("r26", new Room("r26", "Images/r26.png")); 
+        aRooms.put("r30", new Room("r30", "Images/r30.png"));            aRooms.put("r31", new Room("r31", "Images/r31.png")); aRooms.put("r32", new Room("r32", "Images/r32.png")); aRooms.put("r33", new Room("r33", "Images/r33.png")); aRooms.put("r34", new Room("r34", "Images/r34.png")); aRooms.put("r35", new Room("r35", "Images/r35.png")); aRooms.put("r36", new Room("r36", "Images/r36.png")); 
+        aRooms.put("r40", new Room("r40", "Images/r40.png"));            aRooms.put("r41", new Room("r41", "Images/r41.png")); aRooms.put("r42", new Room("r42", "Images/r42.png")); aRooms.put("r43", new Room("r43", "Images/r43.png")); aRooms.put("r44", new Room("r44", "Images/r44.png")); aRooms.put("r45", new Room("r45", "Images/r45.png")); aRooms.put("r46", new Room("r46", "Images/r46.png")); 
+        aRooms.put("r50", new Room("r50", "Images/r50.png"));            aRooms.put("r51", new Room("r51", "Images/r51.png")); aRooms.put("r52", new Room("r52", "Images/r52.png")); aRooms.put("r53", new Room("r53", "Images/r53.png")); aRooms.put("r54", new Room("r54", "Images/r54.png")); aRooms.put("r55", new Room("r55", "Images/r55.png")); aRooms.put("r56", new Room("r56", "Images/r56.png")); 
+        aRooms.put("r60", new TransporterRoom("r60", "Images/r60.png", this)); aRooms.put("r61", new Room("r61", "Images/r61.png")); aRooms.put("r62", new Room("r62", "Images/r62.png")); aRooms.put("r63", new Room("r63", "Images/r63.png")); aRooms.put("r64", new Room("r64", "Images/r64.png")); aRooms.put("r65", new Room("r65", "Images/r65.png")); aRooms.put("r66", new TransporterRoom("r66", "Images/r66.png", this));
 
         // Set Exits
         //Col. 0
@@ -235,10 +235,9 @@ public class GameModel extends Observable
 
         aRooms.get("r00").addItem(new Item("cookie"));
         
-        aRooms.get("r60").addItem(new Beamer("beamer-r60",aRooms.get("r60")));
-        aRooms.get("r01").addItem(new Beamer("beamer-r01",aRooms.get("r01")));
-        aRooms.get("r66").addItem(new Beamer("beamer-r66",aRooms.get("r66")));
-        aRooms.get("r06").addItem(new Beamer("beamer-r06",aRooms.get("r06")));
+        aRooms.get("r00").addItem(new Beamer("beamer-r00",aRooms.get("r00"))); // r00 has a beamer --> TODO: update visuals
+        aRooms.get("r10").addItem(new Beamer("beamer-r10",aRooms.get("r10"))); // r10 has a beamer --> TODO: update visuals
+
         
         // Initialize current Room
         //this.aCurrentRoom = aRooms.get("r00");
@@ -349,6 +348,15 @@ public class GameModel extends Observable
         return this.aPlayer.getCurrentRoom();
     }
 
+    /**
+     * Returns a HashMap containing every rooms
+     * @return HashMap<String,Room>
+     */
+    public HashMap<String,Room> getRooms()
+    {
+        return this.aRooms;
+    }
+    
     /**
      * Returns a String containing the welcome message
      * @return String
