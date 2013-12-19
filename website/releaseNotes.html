@@ -8,7 +8,7 @@
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
 	<!--[if lt IE 9]>
-	TODO 
+	<p><span class="text-info">TODO</span> </p>
 	<![endif]-->
 	<style typr="text/css">
 	body {
@@ -51,11 +51,11 @@
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Download</a></li>
-				<li><a href="releaseNotes.html">Release notes</a></li>
+				<li><a href="http://github.com/glegrain/TelePac/releases">Download</a></li>
+				<li class="active"><a href="releaseNotes.html">Release notes</a></li>
 				<li><a href="http://github.com/glegrain/TelePac">Source &#60 &#62 </a></li>
 				<li><a href="my-zuul-bad/doc/index.html">javadoc</a></li>
-				<li class="active"><a href="about.html">About</a></li>
+				<li><a href="about.html">About</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="contact.html">Contact</a></li>
@@ -69,10 +69,95 @@
 		
 		<div class="row">
 			<div class="span3"></div>
-				<h2>Who we are: <span class="text-muted">Guillaume Legrain & Florian Martin</span></h2>
-				<p class="text-info">Two future <a href="http://esiee.fr">ESIEE Paris</a> engineers graduating 2016.</p>
-				<h2>Our goal:<span class="text-muted"> Learn Java</span></h2>
-				<p class="text-success">The idea behind the project is to learn Java while creating an addictive game.</p>
+				<h2>Releases: </h2>
+				<hr>
+				<p>View all <a href="http://github.com/glegrain/TelePac/releases">releases</a> on GitHub</p>
+
+				<h2>Report: </h2>
+				<hr>
+				<p>Download report: <a href="#">report.pdf</a><p class="text-warning"><p><span class="text-info">TODO:</span>UPDLOAD</p></p></p>
+
+				<h2>Release notes :</h2>
+				<hr>
+				<h4>Exercise 7.40:</h4>
+				<div class="col-md-offset-1">
+					<p>We have to add <code>LOOK("look")</code> to <code>CommandWord</code> and implement a action in <code>Game.processCommand</code></p>
+				</div>
+
+				<h4>Exercise 7.41:</h4>
+				<div class="col-md-offset-1">
+					<p>If we change the word associated with the help command in <code>CommandWord</code>, this change automatically reflected in the welcome text when you start the game.</p>
+				</div>
+
+					<h4>Exercise 7.42:</h4>
+					<div class="col-md-offset-1">
+					<p><span class="text-info">TODO:</span> implement mvc</p>
+					<p><span class="text-success"> + </span>Added <code>KeyListener</code> to change room.</p>
+					<p>You can now go to another room using the keyboard's arrow keys.</p>
+					</div>
+
+					<h4>Exercise 7.43: (Trap door)</h4>
+					<div class="col-md-offset-1">
+					<p>trap door player in room r06</p>
+					<p><span class="text-info">TODO:</span> empty previous room stack if trapdoor (the back command shouln't work)</p>
+					<p><span class="text-info">TODO:</span> show message</p>
+					</div>
+
+					<h4>Exercise 7.44: (beamer)</h4>
+					<div class="col-md-offset-1">
+					<p>seems ok</p>
+					</div>
+
+					<h4>Exercise 7.45: (locked door) (opt.)</h4>
+					<div class="col-md-offset-1">
+					<p><span class="text-info">TODO:</span> the player needs to find a key to open a locked door</p>
+					<p>NOTE:use heritage</p>
+					</div>
+
+					<h4>Exercise 7.45.1: (update test files)</h4>
+					<div class="col-md-offset-1">
+					<p><span class="text-info">TODO</span></p>
+					</div>
+
+					<h4>Exercise 7.45.2: (update javadoc)</h4>
+					<div class="col-md-offset-1">
+					<p><span class="text-info">TODO</span></p>
+					</div>
+
+					<h4>Exercise 7.46: (TransporterRoom)</h4>
+					<div class="col-md-offset-1">
+					<p><span class="text-success"> + </span>Created a new <code>TransporterRoom</code> subclass from Room overriding getExit</p>
+					<p>Change r60, .. instantiation to <code>TransporterRoom</code> instead of Room</p>
+					<p><span class="text-success"> + </span>Added a <code>getRooms</code> method to the GameModel to get a Room HasMap</p>
+					<p>Converter the <code>HashMap</code> into a ArryList to select a value from a Random integer instead of a string description.</p>
+					</div>
+
+					<h4>Exercise 7.46.1: (alea)</h4>
+					<div class="col-md-offset-1">
+					<p><span class="text-info">TODO</span></p>
+					</div>
+
+					<h4>Exercise 7.46.2:</h4>
+					<div class="col-md-offset-1">
+					<p><code>Beamer</code> was already a item subclass</p>
+					<p><p><span class="text-success"> + </span>Created <code>TrapRoom</code> subclass (<span class="text-info">TODO:</span> clear history when entering the room) </p>
+				</div>
+
+
+
+
+
+
+					<h4>Exercise 7.53: (main)</h4>
+					<div class="col-md-offset-1">
+					<p><span class="text-success"> + </span>Added <code>public static void main(String[] args)</code> to instantiate a new game</p>
+					</div>
+
+
+					<h4>Exercise 7.54: (without BlueJ)</h4>
+					<div class="col-md-offset-1">
+					<p>Launch the game using "java Game" in the game's directory</p>
+					</div>
 
 			<div class="span9"></div>
 		</div>
