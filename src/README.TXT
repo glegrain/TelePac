@@ -1,12 +1,8 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
-
+http://www.esiee.fr/~legraing/
 PROJECT TITLE: TelePac
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
+PURPOSE OF PROJECT: Learn java
+VERSION or DATE: v0.1
+HOW TO START THIS PROJECT: java Game
 AUTHORS: Guillaume Legrain & Florian Martin
 USER INSTRUCTIONS:
+Use your keyboard's arrow keys to change room.
