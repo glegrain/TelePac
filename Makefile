@@ -2,13 +2,13 @@ TEX = pdflatex
 
 .PHONY: all clean
 
-all: raport
+all: rapport
 
-descriptif: raport.tex
+raport: rapport.tex
 	$(TEX)  $^
 
 view:
-	open raport.pdf
+	open rapport.pdf
 
 clean:
 	rm -rf *~
