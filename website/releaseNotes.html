@@ -77,9 +77,11 @@
 				<hr>
 				<p>Download report: <a href="http://github.com/glegrain/TelePac/blob/master/rapport.pdf?raw=true">rapport.pdf</a></p>
 
-				<h2>Release notes :</h2>
-				<hr>
-				<h4>Exercise 7.40:</h4>
+				<div id="releaseNotes">
+					<h2>Release notes :</h2>
+					<hr>
+				</div>
+				<!-- <h4>Exercise 7.40:</h4>
 				<div class="col-md-offset-1">
 					<p>We have to add <code>LOOK("look")</code> to <code>CommandWord</code> and implement a action in <code>Game.processCommand</code></p>
 				</div>
@@ -157,7 +159,8 @@
 					<h4>Exercise 7.54: (without BlueJ)</h4>
 					<div class="col-md-offset-1">
 					<p>Launch the game using "java Game" in the game's directory</p>
-					</div>
+					</div> -->
+
 
 			<div class="span9"></div>
 		</div>
@@ -227,5 +230,25 @@
 
 });
 </script>
+
+<script type="text/javascript">
+//Script to show exercise
+					var releaseNotes = {"exercises":[{"chapter":7,"number":40,"title":"enum/look","description":["We have to add <code>LOOK(&quot;look&quot;)</code> to <code>CommandWord</code> and implement a action in <code>Game.processCommand</code>"]},{"chapter":7,"number":41,"title":"enum/help","description":["If we change the word associated with the help command in <code>CommandWord</code>, this change automatically reflected in the welcome text when you start the game."]},{"chapter":7,"number":41.1,"title":"zuul-with-enums-v2"},{"chapter":7,"number":42,"title":"time limit","description":["<span class=\"text-info\">TODO:</span> implement mvc.","<span class=\"text-success\"> + </span>Added <code>KeyListener</code> to change room.","You can now go to another room using the keyboard's arrow keys."]},{"chapter":7,"number":42.1,"title":"true time","optional":true},{"chapter":7,"number":42.2,"title":"HMI"},{"chapter":7,"number":43,"title":"trap door","description":["<span class=\"text-info\">TODO:</span> empty previous room stack if trapdoor (the back command shouln't work)","<span class=\"text-info\">TODO:</span> show message"]},{"chapter":7,"number":44,"title":"beamer","description":["seems ok"]},{"chapter":7,"number":45,"title":"locked door","optional":true,"description":["<span class=\"text-info\">TODO:</span> the player needs to find a key to open a locked door.","NOTE:use heritage"]},{"chapter":7,"number":45.1,"title":"test files"},{"chapter":7,"number":45.2,"title":"javadoc"},{"chapter":7,"number":46,"title":"TransporterRoom","description":["<span class=\"text-success\"> + </span>Created a new <code>TransporterRoom</code> subclass from Room overriding getExit","Change r60, .. instantiation to <code>TransporterRoom</code> instead of Room","span class=\"text-success\"> + </span>Added a <code>getRooms</code> method to the GameModel to get a Room HasMap","Converter the <code>HashMap</code> into a ArryList to select a value from a Random integer instead of a string description."]},{"chapter":7,"number":46.1,"title":"alea command"},{"chapter":7,"number":46.2,"title":"inheritance","description":["<code>Beamer</code> was already a item subclass","<span class=\"text-success\"> + </span>Created <code>TrapRoom</code> subclass (<span class=\"text-info\">TODO:</span> clear history when entering the room)"]},{"chapter":7,"number":46.3,"title":"test files"},{"chapter":7,"number":46.4,"title":"javadoc"},{"chapter":7,"number":47,"title":"abstract Command"},{"chapter":7,"number":47.1,"title":"packages"},{"chapter":7,"number":53,"title":"main","description":["<span class=\"text-success\"> + </span>Added <code>public static void main(String[] args)</code> to instantiate a new game"]},{"chapter":7,"number":54,"title":"without BlueJ","description":["Launch the game using \"java Game\" in the game's directory"]}]};
+					$(document).ready(function() {
+						// loop trough data and change page html
+						var html = "" ;
+						$.each(releaseNotes.exercises, function(i, ex) {
+							html += '<h4>Exercise: ' + ex.chapter + '.' + ex.number + ' : <small>(' + ex.title + ') <\/small><\/h4>';
+							if ( typeof(ex.description) !== 'undefined' ) {
+								html += "<div class=\"col-md-offset-1\">";
+								$.each(ex.description, function(j,desc){
+									html += ('<p>'+ desc + '<\/p>');
+								});
+								html += "<\/div>";
+							}
+						});
+					$(html).appendTo('#releaseNotes');
+					});
+					</script>
 </body>
 </html>
