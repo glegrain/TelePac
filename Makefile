@@ -4,7 +4,7 @@ TEX = pdflatex
 
 all: rapport
 
-raport: rapport.tex
+rapport: rapport.tex
 	$(TEX)  $^
 
 view:
