@@ -10,6 +10,9 @@
 \usepackage{listings} 
 \lstset{mathescape,basicstyle=\ttfamily}% Allow escaping to LaTeX inside $..$
 
+
+
+
 \usepackage[pdftex,
       pdfauthor={Guillaume Legrain & Florian Martin},
       pdftitle={Projet Java A3P},
@@ -21,6 +24,7 @@
 \setlength{\oddsidemargin}{.125in}
 \setlength{\textwidth}{6.25in}
 
+%\setcounter{chapter}{1}
 
 \begin{document}
 
@@ -38,7 +42,9 @@
 %\end{abstract}
 \end{titlepage}
 
-\section{Présentation du projet}
+\tableofcontents
+
+\chapter{Présentation du projet}
 Vous êtes Pac-Man, perdu dans un étrange labyrinthe peuplé de fantômes. Vous voulez vous échapper.
 Mais il faut trouver la clef de la sortie ainsi que des fruits pour affronter les fantômes qui en
 bloquent l’accès.
@@ -82,4 +88,143 @@ vraiment savoir ce qui est envisageable à notre niveau.
    Chaque "Room" possède des attributs indiquant la position de la case suivante ou un mur (avec un \lstinline|null| )
 
 
+
+\chapter{Avancement des exercices}
+\subsection*{Exercice 7.0 : }
+Création de la page web
+
+\subsection*{Exercice 7.1 : }
+Découverte de zuul-bad
+
+\subsubsection*{La classe Room}
+Création de la première salle avec pour attributs la description de la salle et quatre sorties (Nord, Sud, Est, West)
+\subsubsection*{La classe Command}
+Création de la commande « go ». On doit déterminer dans un premier si un ou deux mots ont été tapés. Ensuite on doit vérifier si les commandes tapés sont valides d’où  l’introduction d’une fonction booléenne « isUnknown »
+\subsubsection*{La classe Game}
+\begin{itemize}
+\item Création d’une méthode « createRooms » ayant pour but d’initialiser le jeux (les salles, les sorties, le lieu courant)
+\item La procédure « goRoom » doit s’assurer de la présence d’un second mot (direction) et doit vérifier l’égalité de ce second mot avec une direction avec la fonction « equals ». Si les conditions sont réunis « goRoom » change la current room
+\item On ajoute de nouvelles méthodes : 2 procédures renvoyant un message de bienvenue et un message d’aide. La première doit pouvoir faire appel à la current room et à ses différentes sorties. La seconde doit pouvoir renvoyer le nom de chaque commande disponible. On crée donc des procédure auxquelles on fera appel pour renvoyer ces informations et cela indépendamment du message écrit.
+\item On crée une procédure « processCommand » renvoyant un booléen, capable d’appeler la bonne méthode en fonction de la commande passée en paramètre
+\end{itemize}
+
+\subsubsection*{Les classes CommandWords et Parser}
+La classe CommandWords contient les mots de commande acceptés par le jeu\\
+La classe Parser lie les commandes tapée au clavier, vérifie si la commande est valide et construit l’objet « Command » correspondant auquel on fera appel\\
+V Jeu fonctionnel\\
+On ajoute dans la classe Game un attribut aParser et une procédure « play» qui doit lire répétitivement les commandes tapé au clavier et les exécuter jusqu’à ce que l’on tape « quit ». On introduit une boucle while qui s’exécutera jusqu’à ce qu’une variable booléenne soit égal à vrai. Ce changement d’état aura lieu lorsque l’on tapera la commande « quit ».\\   
+
+\subsection*{Exercice 7.1.1 : Thème}
+
+\subsection*{Exercice 7.2.1 : La classe Scanner}
+
+On crée un objet Scanner possédant le clavier en tant que paramètre. Les lignes de caractères tapés au clavier seront retranscrites dans une String.\\
+
+\subsection*{Exercice 7.4 : Room}
+
+On intègre dans le jeu les différentes salles qui compose notre scénario\\
+
+\subsection*{Exercice 7.5 : printLocationInfo}
+
+On ajoute une méthode affichant les informations de la current Room (nom pour l’instant)\\
+
+
+\subsection*{Exercice 7.6 : getExit}
+
+On ajoute une méthode renvoyant les sorties de la current Room
+
+\subsection*{Exercice 7.7 : getExitString}
+
+On modifie la méthode « printLocationInfo » pour qu’elle affiche aussi les sorties de la current Room. On fait appel pour cela à la méthode «  getExit »
+
+\subsection*{Exercice 7.8 : HashMap, setExit}
+
+On modifie la classe Room pour qu’elle possède un attribut aExit sous la forme d’une HashMap regroupant ainsi toutes les sorties. 
+
+\subsection*{Exercice 7.9 : keySet}
+
+\subsection*{Exercice 7.10 : getExitString CCM ?}
+
+ToDo
+
+\subsection*{Exercice 7.11 : getLongDescription}
+
+ToDo
+
+\subsection*{Exercice 7.14 :  look}
+
+
+
+
+
+
+\subsection*{Exercise 7.40:}
+
+We have to add LOOK("look") to CommandWord and implement a action in Game.processCommand
+
+\subsection*{Exercise 7.41:}
+
+If we change the word associated with the help command in CommandWord, this change automatically reflected in the welcome text when you start the game.
+
+\subsection*{Exercise 7.42:}
+
+TODO: implement mvc
+
++ Added KeyListener to change room.
+
+You can now go to another room using the keyboard's arrow keys.
+
+\subsection*{Exercise 7.43: (Trap door)}
+
+trap door player in room r06
+
+TODO: empty previous room stack if trapdoor (the back command shouln't work)
+
+TODO: show message
+
+\subsection*{Exercise 7.44: (beamer)}
+
+seems ok
+
+\subsection*{Exercise 7.45: (locked door) (opt.)}
+
+TODO: the player needs to find a key to open a locked door
+
+NOTE:use heritage
+
+\subsection*{Exercise 7.45.1: (update test files)}
+
+TODO
+
+\subsection*{Exercise 7.45.2: (update javadoc)}
+
+TODO
+
+\subsection*{Exercise 7.46: (TransporterRoom)}
+
++ Created a new TransporterRoom subclass from Room overriding getExit
+
+Change r60, .. instantiation to TransporterRoom instead of Room
+
++ Added a getRooms method to the GameModel to get a Room HasMap
+
+Converter the HashMap into a ArryList to select a value from a Random integer instead of a string description.
+
+\subsection*{Exercise 7.46.1: (alea)}
+
+TODO
+
+\subsection*{Exercise 7.46.2:}
+
+Beamer was already a item subclass
+
++ Created TrapRoom subclass (TODO: clear history when entering the room)
+
+\subsection*{Exercise 7.53: (main)}
+
++ Added public static void main(String[] args) to instantiate a new game
+
+\subsection*{Exercise 7.54: (without BlueJ)}
+
+Launch the game using \"java Game\" in the game's directory
 \end{document}
