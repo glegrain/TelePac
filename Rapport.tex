@@ -69,7 +69,7 @@ vraiment savoir ce qui est envisageable à notre niveau.
       \item Le joueur pourra choisir parmi plusieurs labyrinthes ( peut être même en 
       créer lui-même, dans un fichier que le jeu va "parser" avant de démarrer). %Une première approche
       %sera d'essayer de charger le niveau enregistré au format JSON ou XML et de le parser. %avec 
-      %\href{https://github.com/douglascrockford/JSON-java}{JSON-java} ou \href{https://code.google.com/p/google-gson/}{google-gson}
+      %\hyperreff{https://github.com/douglascrockford/JSON-java}{JSON-java} ou \href{https://code.google.com/p/google-gson/}{google-gson}
       %par exemple.
       \item EN PLUS de la console (avec le "prompt"), le joueur pourra se déplacer avec les 
       touches du clavier (Up, down, left, right).
@@ -145,11 +145,12 @@ On modifie la classe Room pour qu’elle possède un attribut aExit sous la form
 
 \subsection*{Exercice 7.10 : getExitString CCM ?}
 
-ToDo
+The getExitString method builds a String containing all the keys of the exits HashMap (i.e possible Exits) and returns this String.
 
 \subsection*{Exercice 7.11 : getLongDescription}
 
-ToDo
++ Created getLongDescription() method calling the getExitString() method and appending additional textual information to it.
+Returns a String with more information. 
 
 \subsection*{Exercice 7.14 :  look}
 On ajoute une commande « look » faisant appel à la procédure  « getLongDesciption »  pour que le joueur puisse obtenir les informations de la current Room
@@ -164,12 +165,22 @@ On ajoute une nouvelle méthode faisant appel à une boucle « for each » qui p
 On ajoute une nouvelle méthode renvoyant les noms des commandes que l’on ajoute dans le jeu
 
 \subsection*{Exercice 7.18.1 : comparaison à zuul-better}
-ToDo
+Room class:
++ HashMap aExits
++ SetExits()
++ getExit(String direction)
+
+Game class:
+Changed the goRoom() method to get the nextRoom and checking it exists instead of comparing each directions.
+
+
 
 \subsection*{Exercice 7.18.2 : StringBuilder}
 Le StringBuilder permet d’ajouter à une première String de nouveau charactères (ex : on ajoute la liste des commandes disponibles à la String « les actions que vous pouvez executer sont : » ) et ainsi de pouvoir une seul et unique String
 
 \subsection*{Exercice 7.18.3 : recherche d’image}
+Creation des images (image identique pour chaque room mais avec déplacement du personnage).
+(Vue aérienne)
 
 \subsection*{Exercice 7.18.4 : titre du jeu}
 TelePac pour faire référence aux téléporteurs et à Pac-Man tout en conservant un nom court et accrocheur
@@ -185,14 +196,61 @@ On ajoute des méthodes nécessitant un keyListenner afin de créer des boutons 
 On ajoute un objet Item a une Room avec pour attribut son nom et un poids 
 
 \subsection*{Exercice 7.21 : Item description}
-
-Les informations concernant les items doivent être stockés dans un premier temps au même endroit que celle de la Room puisque ToDo
-
-
-
+Item Class:
++ getItemDescription() used by the GameEngine Class to follow responsibility driven desing.
+Any changes made to the description and the message insn't affected by the way it is presented.
 
 
 
+
+\subsection*{Exercice 7.22 : Items}
+
+On cherche à ajouter un nombre illimité d’objet dans une même Room. Pour 
+cela on change l’attribut de la Room « Item »  pour un attribut « Items » sous la 
+forme d’une collection. On implémente donc deux méthodes « addItem » et 
+« removeItem » afin d’ajouter et de supprimer les objets d’une même Room
+
+\subsection*{Exercice 7.23 : Back}
+
+\subsection*{Exercice 7.24 : Back test}
+
+\subsection*{Exercice 7.25 : Back back}
+
+\subsection*{Exercice 7.26 : Stack}
+
+\subsection*{Exercice 7.27 : Tests}
+
+\subsection*{Exercice 7.28 : Automatisation des tests}
+
+\subsection*{Exercice 7.29 : Player}
+
+\subsection*{Exercice 7.30 : Take, Drop}
+
+\subsection*{Exercice 7.31 : Porteur plusieurs items}
+
+\subsection*{Exercice 7.32 : Poids max}
+
+On ajoute un attribut à la classe « Player » : PoidsPorté et un autre à la classe 
+« Items » : poids. On ajoute aussi dans les méthodes « addItem » et 
+«  removeItem » de la classe « Item » et de la classe « Player » une ligne de 
+commande venant ajouter ou soustraire l’attribut poids de l’objet à l’attribut 
+PoidsPorté de la classe Items. On implémente enfin une vérification juste avant 
+l’appel de la méthode « addItem » par la méthode « drop » s’assurant que le 
+PoidsPorté est inférieur d’un PoidsMax.
+
+\subsection*{Exercice 7.33 : Inventaire}
+
+On ajoute un stringbuilder ajoutant et retirant au fur et à mesure les noms des 
+objets ajoutés et retiré par la méthode « addItem » à l’attribut Items du Player.
+
+\subsection*{Exercice 7.34 : Magic cookie}
++ eat cookie redirects to take cookie
+Bad implementation: the pickUpItem() method checks to see if the picked up Item is a magic cookie, and multiplies by 10 the timeLimit (i.e: 10 more moves)
+
+\subsection*{Exercice 7.35 : Zuul-with-enums-v1}
+
++ CommandWord class
+command words are nows constants (e.g: BACK, TEST), regardless of the language.
 
 
 
@@ -268,4 +326,7 @@ Beamer was already a item subclass
 \subsection*{Exercise 7.54: (without BlueJ)}
 
 Launch the game using \"java Game\" in the game's directory
+
+\subsection*{Exercise 7.58: (.jar)}
+jar cmf META-INF/MANIFEST.MF ~/Desktop/TelePac2.jar ./*
 \end{document}
