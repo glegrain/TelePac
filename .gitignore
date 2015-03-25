@@ -3,5 +3,6 @@
 *.toc
 *.log
 *.DS_Store
+*.class
 
 *.ctxt
