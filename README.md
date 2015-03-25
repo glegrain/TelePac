@@ -4,7 +4,7 @@ The TelePac project is Pac-man like game written in Java to learn object oriente
 ![map](http://perso.esiee.fr/~legraing/map.png)
 
 ## Compiling
-In the root directory of the repo, run the Java compiler specifing the user class path and the game entry point:
+In the root directory of the repo, run the Java compiler specifying the user class path and the game entry point:
 ```
 javac -classpath src/ src/Game.java
 ```
